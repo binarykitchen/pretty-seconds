@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = prettySeconds;
 
 function quantify(data, unit, value) {
