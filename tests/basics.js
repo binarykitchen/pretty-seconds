@@ -1,7 +1,7 @@
 "use strict";
 
-var   testCase = require('nodeunit').testCase
-    , prettySeconds;
+var testCase = require('nodeunit').testCase,
+    prettySeconds;
 
 module.exports = testCase({
 
@@ -18,7 +18,7 @@ module.exports = testCase({
 
             t.strictEqual(result, '', 'prettySeconds did nothing');
 
-            t.done();            
+            t.done();
         },
 
         'run with zero seconds (0)': function(t) {
@@ -93,7 +93,7 @@ module.exports = testCase({
         'various test under 2 hours': function(t) {
             var result = prettySeconds(3599);
             t.strictEqual(result, "59 minutes and 59 seconds");
-            
+
             result = prettySeconds(3600);
             t.strictEqual(result, "1 hour");
 
