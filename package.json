@@ -1,6 +1,6 @@
 {
   "name": "pretty-seconds",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "a very simple function to stringify any huge number of seconds. give it million seconds and it tells you how many days, hours, minutes and seconds in a pretty string.",
   "main": "pretty-seconds.js",
   "author": "Michael Heuberger <michael.heuberger@binarykitchen.com>",
@@ -10,13 +10,13 @@
     "string"
   ],
   "devDependencies": {
-    "nodeunit": "^0.9"
+    "nodeunit": "0.9.1"
   },
   "dependencies": {
 
   },
   "engines": {
-    "node": ">=0.10.3"
+    "node": ">=0.10.30"
   },
   "scripts": {
     "test": "nodeunit tests/basics.js"

@@ -1,5 +1,3 @@
-"use strict";
-
 function quantify(data, unit, value) {
     if (value) {
         if (value > 1 || value < -1)
