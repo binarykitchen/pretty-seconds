@@ -19,7 +19,7 @@ module.exports = function prettySeconds(seconds) {
         data = quantify(data, 'day',    parseInt(seconds / 86400));
         data = quantify(data, 'hour',   parseInt((seconds % 86400) / 3600));
         data = quantify(data, 'minute', parseInt((seconds % 3600) / 60));
-        data = quantify(data, 'second', seconds % 60);
+        data = quantify(data, 'second', Math.floor(seconds % 60));
 
         var length = data.length,
             i;
