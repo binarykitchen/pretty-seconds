@@ -44,7 +44,7 @@ all this function does is some maths and string concenations to have a pretty st
 
 __arguments__
 
-* seconds - any positive or negative integer you fancy
+* seconds - any positive or negative number (integer or float) you fancy
 
 ## license
 
