@@ -1,5 +1,3 @@
-"use strict";
-
 var testCase = require('nodeunit').testCase,
     prettySeconds;
 
@@ -133,6 +131,17 @@ module.exports = testCase({
 
             result = prettySeconds(266467);
             t.strictEqual(result, "3 days, 2 hours, 1 minute and 7 seconds");
+
+            t.done();
+        },
+
+        'test with seconds as floats': function(t) {
+
+            var result = prettySeconds(1.01);
+            t.strictEqual(result, "1 second");
+
+            var result = prettySeconds(92.00000000000000000000000001);
+            t.strictEqual(result, "1 minute and 32 seconds");
 
             t.done();
         }

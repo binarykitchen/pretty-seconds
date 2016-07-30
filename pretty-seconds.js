@@ -1,25 +1,29 @@
 function quantify(data, unit, value) {
     if (value) {
         if (value > 1 || value < -1)
-            unit += 's';
+            unit += 's'
 
-        data.push(value + ' ' + unit);
+        data.push(value + ' ' + unit)
     }
 
-    return data;
+    return data
 }
 
 module.exports = function prettySeconds(seconds) {
 
     var prettyString = '',
-        data = [];
+        data = []
 
     if (typeof seconds === 'number') {
 
-        data = quantify(data, 'day',    parseInt(seconds / 86400));
-        data = quantify(data, 'hour',   parseInt((seconds % 86400) / 3600));
-        data = quantify(data, 'minute', parseInt((seconds % 3600) / 60));
-        data = quantify(data, 'second', Math.floor(seconds % 60));
+        function fix10(number) {
+            return number.toFixed(10)
+        }
+
+        data = quantify(data, 'day',    parseInt(fix10(seconds / 86400)))
+        data = quantify(data, 'hour',   parseInt(fix10((seconds % 86400) / 3600)))
+        data = quantify(data, 'minute', parseInt(fix10((seconds % 3600) / 60)))
+        data = quantify(data, 'second', Math.floor(seconds % 60))
 
         var length = data.length,
             i;
@@ -28,13 +32,13 @@ module.exports = function prettySeconds(seconds) {
 
             if (prettyString.length > 0)
                 if (i == length - 1)
-                    prettyString += ' and ';
+                    prettyString += ' and '
                 else
-                    prettyString += ', ';
+                    prettyString += ', '
 
-            prettyString += data[i];
+            prettyString += data[i]
         }
     }
 
-    return prettyString;
-};
+    return prettyString
+}
