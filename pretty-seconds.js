@@ -1,6 +1,6 @@
-function quantify(data, unit, value) {
-    if (value) {
-        if (value > 1 || value < -1)
+function quantify(data, unit, value, allowZero) {
+    if (value || (allowZero && !value)) {
+        if (value > 1 || value < -1 || value === 0)
             unit += 's'
 
         data.push(value + ' ' + unit)
@@ -23,7 +23,7 @@ module.exports = function prettySeconds(seconds) {
         data = quantify(data, 'day',    parseInt(fix10(seconds / 86400)))
         data = quantify(data, 'hour',   parseInt(fix10((seconds % 86400) / 3600)))
         data = quantify(data, 'minute', parseInt(fix10((seconds % 3600) / 60)))
-        data = quantify(data, 'second', Math.floor(seconds % 60))
+        data = quantify(data, 'second', Math.floor(seconds % 60), data.length < 1)
 
         var length = data.length,
             i;

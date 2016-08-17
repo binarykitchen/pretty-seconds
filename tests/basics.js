@@ -22,7 +22,7 @@ module.exports = testCase({
         'run with zero seconds (0)': function(t) {
             var result = prettySeconds(0);
 
-            t.strictEqual(result, '', 'prettySeconds did nothing');
+            t.strictEqual(result, '0 seconds', 'prettySeconds returned 0 seconds');
 
             t.done();
         },
