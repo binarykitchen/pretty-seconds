@@ -15,8 +15,8 @@ function fix10 (number) {
 }
 
 module.exports = function prettySeconds (seconds) {
-  var prettyString = ''
-  var data = []
+  let prettyString = ''
+  let data = []
 
   if (typeof seconds === 'number') {
     data = quantify(data, 'day', parseInt(fix10(seconds / 86400)))
@@ -25,7 +25,7 @@ module.exports = function prettySeconds (seconds) {
     data = quantify(data, 'second', Math.floor(seconds % 60), data.length < 1)
 
     const length = data.length
-    var i
+    let i
 
     for (i = 0; i < length; i++) {
       if (prettyString.length > 0) {
