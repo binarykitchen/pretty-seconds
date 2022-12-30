@@ -1,6 +1,6 @@
 {
   "name": "pretty-seconds",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "a very simple function to stringify any huge number of seconds. give it million seconds and it tells you how many days, hours, minutes and seconds in a pretty string.",
   "main": "dist/pretty-seconds.js",
   "author": "Michael Heuberger <michael.heuberger@binarykitchen.com>",
@@ -18,14 +18,9 @@
     "lint:fix": "standard --fix index.js",
     "build": "microbundle"
   },
-  "devDependencies": {
-    "microbundle": "0.14.2",
-    "nodeunit": "0.11.3",
-    "standard": "16.0.4"
-  },
   "engines": {
-    "node": "^16.13.1",
-    "npm": "^8.1.2"
+    "node": "^18.12.1",
+    "npm": "^8.19.2"
   },
   "repository": {
     "type": "git",
@@ -35,5 +30,10 @@
   "readmeFilename": "README.md",
   "directories": {
     "test": "tests"
+  },
+  "devDependencies": {
+    "microbundle": "0.14.2",
+    "nodeunit": "0.11.3",
+    "standard": "16.0.4"
   }
 }
